@@ -124,10 +124,10 @@ local Button = Tab:CreateButton({
    end,
 })
 local Button = Tab:CreateButton({
-   Name = "RPG",
+   Name = "P90",
    Callback = function()
    -- The function that takes place when the button is pressed
-   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.23186492919922, -26.750036239624023, -270.75433349609375)
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(466.31500244140625, 48.070491790771484, -618.810302734375)
    end,
 })
 local Button = Tab:CreateButton({
@@ -135,6 +135,13 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-933.7365112304688, -25.249828338623047, 570.4571533203125)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "RPG",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.23186492919922, -26.750036239624023, -270.75433349609375)
    end,
 })
 local Button = Tab:CreateButton({
@@ -163,6 +170,27 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-338.352173, 23.6826477, -297.2146, -0.0060598203, -1.03402984e-08, -0.999981582, -1.61653102e-09, 1, -1.03306892e-08, 0.999981582, 1.55389912e-09, -0.0060598203)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Ak47",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-587.146240234375, 8.314779281616211, -750.5503540039062)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Millitary",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(38.24761962890625, 25.25499725341797, -872.0338745117188)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "UFO",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(70.3614730834961, 156.51829528808594, -690.0761108398438)
    end,
 })
  local Tab = Window:CreateTab("Misc", 4483362458) -- Title, Image
