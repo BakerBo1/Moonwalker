@@ -4,6 +4,7 @@ loadstring:
 loadstring(game:HttpGet('https://raw.githubusercontent.com/BakerBo1/Moonwalker/main/Script'))()
 --]]
 
+-- Notification
 local function callback(Text)
 end
  
@@ -16,6 +17,8 @@ game.StarterGui:SetCore("SendNotification", {
     Duration = "5";
     Callback = NotificationBindable;
 })
+
+--Boot
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
     Name = "MoonWalker",
@@ -85,6 +88,83 @@ local Window = Rayfield:CreateWindow({
 })
  local Tab = Window:CreateTab("Teleports", 4483362458) -- Title, Image
  local Section = Tab:CreateSection("Section Example")
+ local Button = Tab:CreateButton({
+   Name = "Double Barrel",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1039.59985, 18.8513641, -256.449951, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Revolver",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-638.75, 18.8500004, -118.175011, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Shotgun",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-578.4894409179688, 8.314781188964844, -725.5555419921875)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Tactical Shotgun",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(470.8390197753906, 48.07050323486328, -620.9203491210938)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Smg",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-577.3603515625, 8.314778327941895, -719.4443359375)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "RPG",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.23186492919922, -26.750036239624023, -270.75433349609375)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Armor",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-933.7365112304688, -25.249828338623047, 570.4571533203125)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "PopCorn",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-995, 21.6998043, -153.100037, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Casino 1v1",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1032.1070556640625, 21.25499153137207, -185.90151977539062)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Bank",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-481.1031494140625, 39.097171783447266, -283.6198425292969)
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Main Food",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-338.352173, 23.6826477, -297.2146, -0.0060598203, -1.03402984e-08, -0.999981582, -1.61653102e-09, 1, -1.03306892e-08, 0.999981582, 1.55389912e-09, -0.0060598203)
+   end,
+})
  local Tab = Window:CreateTab("Misc", 4483362458) -- Title, Image
  local Section = Tab:CreateSection("Section Example")
  local Button = Tab:CreateButton({
