@@ -193,6 +193,13 @@ local Button = Tab:CreateButton({
    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(70.3614730834961, 156.51829528808594, -690.0761108398438)
    end,
 })
+local Button = Tab:CreateButton({
+   Name = "Lockpick",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-263.9359130859375, 21.7499942779541, -241.1608428955078)
+   end,
+})
  local Tab = Window:CreateTab("Misc", 4483362458) -- Title, Image
  local Section = Tab:CreateSection("Section Example")
  local Button = Tab:CreateButton({
