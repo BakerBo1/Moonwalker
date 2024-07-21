@@ -214,6 +214,81 @@ local Button = Tab:CreateButton({
    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-263.9359130859375, 21.7499942779541, -241.1608428955078)
    end,
 })
+ local Tab = Window:CreateTab("Arsenal", 4483362458) -- Title, Image
+ local Section = Tab:CreateSection("Functions")
+ -- Constants
+local FlySpeed = 50  -- Adjust the fly speed as needed
+
+-- Variables
+local isFlying = false
+local FlyLoop  -- This will hold the connection for the fly loop
+local Toggle  -- Declare Toggle outside to ensure it's in scope
+
+-- Function to handle flying state
+local function toggleFly(parameter)
+    if parameter == true and not isFlying then
+        isFlying = true
+        FlyLoop = game:GetService("RunService").Heartbeat:Connect(function()
+            local speed = FlySpeed
+            local velocity = Vector3.new(0, 0, 0)
+            local player = game.Players.LocalPlayer
+            local character = player.Character
+            local humanoidRootPart = character and character:FindFirstChild("HumanoidRootPart")
+            local humanoid = character and character:FindFirstChild("Humanoid")
+            
+            if humanoidRootPart and humanoid and humanoid.Health > 0 then
+                local UserInputService = game:GetService("UserInputService")
+                
+                if UserInputService:IsKeyDown(Enum.KeyCode.W) then
+                    velocity = velocity + (workspace.CurrentCamera.CFrame.lookVector * speed)
+                end
+                if UserInputService:IsKeyDown(Enum.KeyCode.A) then
+                    velocity = velocity + (workspace.CurrentCamera.CFrame.rightVector * -speed)
+                end
+                if UserInputService:IsKeyDown(Enum.KeyCode.S) then
+                    velocity = velocity + (workspace.CurrentCamera.CFrame.lookVector * -speed)
+                end
+                if UserInputService:IsKeyDown(Enum.KeyCode.D) then
+                    velocity = velocity + (workspace.CurrentCamera.CFrame.rightVector * speed)
+                end
+                
+                humanoidRootPart.Velocity = velocity
+                humanoid:ChangeState(Enum.HumanoidStateType.Freefall)
+            end
+        end)
+    elseif parameter == false and isFlying then
+        isFlying = false
+        if FlyLoop then
+            FlyLoop:Disconnect()
+            local player = game.Players.LocalPlayer
+            local character = player.Character
+            local humanoid = character and character:FindFirstChild("Humanoid")
+            if humanoid then
+                humanoid:ChangeState(Enum.HumanoidStateType.Landing)
+            end
+        end
+    end
+end
+
+-- Create the toggle in your GUI (assuming Tab:CreateToggle returns a toggle object)
+local Toggle = Tab:CreateToggle({
+    Name = "Fly Toggle",
+    CurrentValue = false,
+    Flag = "FlyToggleFlag",
+    Callback = function(Value)
+        toggleFly(Value)  -- Call the toggleFly function with the toggle's value (true or false)
+    end,
+})
+
+
+-- Function to handle input for toggling flying state
+game:GetService("UserInputService").InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.V then
+        Toggle:SetValue(not Toggle:GetValue())  -- Toggle the GUI toggle state when 'v' is pressed
+    end
+end)
+
+
  local Tab = Window:CreateTab("Misc", 4483362458) -- Title, Image
  local Section = Tab:CreateSection("Section Example")
  local Button = Tab:CreateButton({
